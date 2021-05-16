@@ -56,20 +56,25 @@ function NavBar(props) {
       icon: <HomeIcon className="text-white" />
     },
     {
-      link: "/blog",
-      name: "Blog",
+      link: "/about",
+      name: "about",
       icon: <BookIcon className="text-white" />
     },
     {
-      name: "Register",
-      onClick: openRegisterDialog,
-      icon: <HowToRegIcon className="text-white" />
-    },
-    {
-      name: "Login",
-      onClick: openLoginDialog,
-      icon: <LockOpenIcon className="text-white" />
-    }
+      link: "/blog",
+      name: "Blog",
+      icon: <BookIcon className="text-white" />
+    }//,
+    // {
+    //   name: "Register",
+    //   onClick: openRegisterDialog,
+    //   icon: <HowToRegIcon className="text-white" />
+    // },
+    // {
+    //   name: "Login",
+    //   onClick: openLoginDialog,
+    //   icon: <LockOpenIcon className="text-white" />
+    // }
   ];
   return (
     <div className={classes.root}>
@@ -82,7 +87,7 @@ function NavBar(props) {
               display="inline"
               color="primary"
             >
-              Wa
+              Sample
             </Typography>
             <Typography
               variant="h4"
@@ -90,7 +95,7 @@ function NavBar(props) {
               display="inline"
               color="secondary"
             >
-              Ver
+              IT
             </Typography>
           </div>
           <div>
