@@ -56,12 +56,12 @@ function NavBar(props) {
     },
     {
       link: "/about",
-      name: "about",
+      name: "About",
       icon: <BookIcon className="text-white" />,
     },
     {
-      link: "/faq",
-      name: "faqs",
+      link: "/faqs",
+      name: "Faqs",
       icon: <BookIcon className="text-white" />,
     },
     {
@@ -130,6 +130,7 @@ function NavBar(props) {
                       <Button
                         color="secondary"
                         size="large"
+                        disabled={selectedTab === element.name}
                         classes={{ text: classes.menuButtonText }}
                       >
                         {element.name}

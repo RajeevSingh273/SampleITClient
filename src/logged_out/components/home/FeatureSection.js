@@ -124,7 +124,7 @@ function FeatureSection(props) {
                   Icon={element.icon}
                   color={element.color}
                   headline={element.headline}
-                  text={element.text}
+                  // text={element.text}
                 />
               </Grid>
             ))}

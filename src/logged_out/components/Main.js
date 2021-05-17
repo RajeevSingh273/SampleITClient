@@ -9,7 +9,6 @@ import CookieRulesDialog from "./cookies/CookieRulesDialog";
 import CookieConsent from "./cookies/CookieConsent";
 import dummyBlogPosts from "../dummy_data/blogPosts";
 
-
 import DialogSelector from "./register_login/DialogSelector";
 import Routing from "./Routing";
 import smoothScrollTop from "../../shared/functions/smoothScrollTop";
@@ -33,14 +32,25 @@ function Main(props) {
 
   const selectHome = useCallback(() => {
     smoothScrollTop();
-    document.title =
-      "WaVer - Free template for building a SaaS or admin application";
+    document.title = "SIT-Home";
     setSelectedTab("Home");
+  }, [setSelectedTab]);
+
+  const selectAbout = useCallback(() => {
+    smoothScrollTop();
+    document.title = "SIT - About";
+    setSelectedTab("About");
+  }, [setSelectedTab]);
+
+  const selectFaqs = useCallback(() => {
+    smoothScrollTop();
+    document.title = "SIT - Faqs";
+    setSelectedTab("Faqs");
   }, [setSelectedTab]);
 
   const selectBlog = useCallback(() => {
     smoothScrollTop();
-    document.title = "WaVer - Blog";
+    document.title = "SIT - Blog";
     setSelectedTab("Blog");
   }, [setSelectedTab]);
 
@@ -132,6 +142,8 @@ function Main(props) {
       <Routing
         blogPosts={blogPosts}
         selectHome={selectHome}
+        selectAbout={selectAbout}
+        selectFaqs={selectFaqs}
         selectBlog={selectBlog}
       />
       <Footer />

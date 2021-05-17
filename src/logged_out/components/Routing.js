@@ -10,7 +10,7 @@ import Faqs from "./faqs";
 import useLocationBlocker from "../../shared/functions/useLocationBlocker";
 
 function Routing(props) {
-  const { blogPosts, selectBlog, selectHome } = props;
+  const { selectHome, selectAbout, selectFaqs, blogPosts, selectBlog } = props;
   useLocationBlocker();
   return (
     <Switch>
@@ -39,12 +39,9 @@ function Routing(props) {
         exact
         path="/about"
         component={AboutUs}
+        selectAbout={selectAbout}
       />
-      <PropsRoute
-        exact
-        path="/faqs"
-        component={Faqs}
-      />
+      <PropsRoute path="/faqs" component={Faqs} selectFaqs={selectFaqs} />
       <PropsRoute path="/" component={Home} selectHome={selectHome} />
     </Switch>
   );
@@ -53,6 +50,8 @@ function Routing(props) {
 Routing.propTypes = {
   blogposts: PropTypes.arrayOf(PropTypes.object),
   selectHome: PropTypes.func.isRequired,
+  selectAbout: PropTypes.func.isRequired,
+  selectFaqs: PropTypes.func.isRequired,
   selectBlog: PropTypes.func.isRequired,
 };
 
