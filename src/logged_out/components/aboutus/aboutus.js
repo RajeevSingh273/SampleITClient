@@ -1,14 +1,17 @@
-import React, { Fragment} from "react";
+import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import HeadSection from "./HeadSection";
 
-
 const AboutUs = (props) => {
-  //   const { classes } = props;
+  const { classes, width, selectAbout } = props;
+
+  useEffect(() => {
+    selectAbout();
+  }, [selectAbout]);
 
   return (
     <Fragment>
-      <HeadSection />
+      <HeadSection classes={classes} width={width} />
     </Fragment>
   );
 };
@@ -16,6 +19,7 @@ const AboutUs = (props) => {
 AboutUs.propTypes = {
   classes: PropTypes.object.isRequired,
   width: PropTypes.string.isRequired,
+  selectAbout: PropTypes.func.isRequired,
 };
 
 export default AboutUs;

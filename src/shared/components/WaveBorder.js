@@ -7,8 +7,8 @@ const styles = {
     position: "relative",
     width: "100%",
     marginBottom: -7,
-    height: "7vw",
-    minHeight: "7vw"
+    height: "4vw",
+    minHeight: "4vw"
   },
   "@keyframes moveForever": {
     from: { transform: "translate3d(-90px, 0, 0)" },
@@ -16,7 +16,7 @@ const styles = {
   },
   parallax: {
     "& > use": {
-      animation: "$moveForever 4s cubic-bezier(0.62, 0.5, 0.38, 0.5) infinite",
+      animation: "$moveForever 4s cubic-bezier(0.2, 0.2, 0.2, 0.2) infinite",
       animationDelay: props => `-${props.animationNegativeDelay}s`
     }
   }
