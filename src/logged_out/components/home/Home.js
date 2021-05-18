@@ -5,7 +5,7 @@ import HowItWorks from "./HowItWorks";
 import FeatureSection from "./FeatureSection";
 
 function Home(props) {
-  const { classes, selectHome } = props;
+  const { selectHome } = props;
   useEffect(() => {
     selectHome();
   }, [selectHome]);
