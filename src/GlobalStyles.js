@@ -51,7 +51,7 @@ const styles = theme => ({
       paddingLeft: theme.spacing(2),
       marginRight: "auto",
       marginLeft: "auto",
-      maxWidth: 1370
+      // maxWidth: 1370
     },
     ".lg-mg-top": {
       marginTop: `${theme.spacing(20)}px !important`,
@@ -78,15 +78,15 @@ const styles = theme => ({
       }
     },
     ".lg-p-top": {
-      paddingTop: `${theme.spacing(20)}px !important`,
+      paddingTop: `${theme.spacing(16)}px !important`,
       [theme.breakpoints.down("md")]: {
-        paddingTop: `${theme.spacing(18)}px !important`
+        paddingTop: `${theme.spacing(14)}px !important`
       },
       [theme.breakpoints.down("sm")]: {
-        paddingTop: `${theme.spacing(16)}px !important`
+        paddingTop: `${theme.spacing(14)}px !important`
       },
       [theme.breakpoints.down("xs")]: {
-        paddingTop: `${theme.spacing(14)}px !important`
+        paddingTop: `${theme.spacing(11)}px !important`
       }
     }
   }
