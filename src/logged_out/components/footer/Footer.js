@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {
+  AppBar,
+  Container,
+  Toolbar,
   Grid,
   Typography,
   Box,
@@ -9,7 +12,7 @@ import {
   withStyles,
   withWidth,
   isWidthUp,
-  TextField
+  TextField,
 } from "@material-ui/core";
 import PhoneIcon from "@material-ui/icons/Phone";
 import MailIcon from "@material-ui/icons/Mail";
@@ -17,7 +20,7 @@ import WaveBorder from "../../../shared/components/WaveBorder";
 import transitions from "@material-ui/core/styles/transitions";
 import ColoredButton from "../../../shared/components/ColoredButton";
 
-const styles = theme => ({
+const styles = (theme) => ({
   footerInner: {
     backgroundColor: theme.palette.common.darkBlack,
     paddingTop: theme.spacing(8),
@@ -28,62 +31,62 @@ const styles = theme => ({
       paddingTop: theme.spacing(10),
       paddingLeft: theme.spacing(16),
       paddingRight: theme.spacing(16),
-      paddingBottom: theme.spacing(10)
+      paddingBottom: theme.spacing(10),
     },
     [theme.breakpoints.up("md")]: {
       paddingTop: theme.spacing(10),
       paddingLeft: theme.spacing(10),
       paddingRight: theme.spacing(10),
-      paddingBottom: theme.spacing(10)
-    }
+      paddingBottom: theme.spacing(10),
+    },
   },
   brandText: {
     fontFamily: "'Baloo Bhaijaan', cursive",
     fontWeight: 400,
-    color: theme.palette.common.white
+    color: theme.palette.common.white,
   },
   footerLinks: {
     marginTop: theme.spacing(2.5),
     marginBot: theme.spacing(1.5),
-    color: theme.palette.common.white
+    color: theme.palette.common.white,
   },
   infoIcon: {
     color: `${theme.palette.common.white} !important`,
-    backgroundColor: "#33383b !important"
+    backgroundColor: "#33383b !important",
   },
   socialIcon: {
     fill: theme.palette.common.white,
     backgroundColor: "#33383b",
     borderRadius: theme.shape.borderRadius,
     "&:hover": {
-      backgroundColor: theme.palette.primary.light
-    }
+      backgroundColor: theme.palette.primary.light,
+    },
   },
   link: {
     cursor: "Pointer",
     color: theme.palette.common.white,
     transition: transitions.create(["color"], {
       duration: theme.transitions.duration.shortest,
-      easing: theme.transitions.easing.easeIn
+      easing: theme.transitions.easing.easeIn,
     }),
     "&:hover": {
-      color: theme.palette.primary.light
-    }
+      color: theme.palette.primary.light,
+    },
   },
   whiteBg: {
-    backgroundColor: theme.palette.common.white
-  }
+    backgroundColor: theme.palette.common.white,
+  },
 });
 
 const infos = [
   {
     icon: <PhoneIcon />,
-    description: "+91-9820117961"
+    description: "+91-9820117961",
   },
   {
     icon: <MailIcon />,
-    description: "sampleit@gmail.com"
-  }
+    description: "sampleit@gmail.com",
+  },
 ];
 
 const socialIcons = [
@@ -117,8 +120,8 @@ const socialIcons = [
       </svg>
     ),
     label: "Facebook",
-    target:"_blank",
-    href: "https://www.facebook.com/Sample-IT-100248785592816"
+    target: "_blank",
+    href: "https://www.facebook.com/Sample-IT-100248785592816",
   },
   {
     icon: (
@@ -134,7 +137,7 @@ const socialIcons = [
       </svg>
     ),
     label: "LinkedIn",
-    href: "https://www.linkedin.com/"
+    href: "https://www.linkedin.com/",
   },
   {
     icon: (
@@ -150,19 +153,19 @@ const socialIcons = [
       </svg>
     ),
     label: "Twitter",
-    href: "https://www.twitter.com/"
-  }
+    href: "https://www.twitter.com/",
+  },
 ];
 
 function Footer(props) {
   const { classes, theme, width } = props;
   return (
     <footer className="lg-p-top">
-      <WaveBorder
+      {/* <WaveBorder
         upperColor="#FFFFFF"
         lowerColor={theme.palette.common.darkBlack}
         animationNegativeDelay={4}
-      />
+      /> */}
       <div className={classes.footerInner}>
         <Grid container spacing={isWidthUp("md", width) ? 10 : 5}>
           <Grid item xs={12} md={6} lg={4}>
@@ -175,7 +178,7 @@ function Footer(props) {
                     placeholder="Get in touch with us"
                     inputProps={{ "aria-label": "Get in Touch" }}
                     InputProps={{
-                      className: classes.whiteBg
+                      className: classes.whiteBg,
                     }}
                     rows={4}
                     fullWidth
@@ -227,15 +230,29 @@ function Footer(props) {
               About SampleIT
             </Typography>
             <Typography style={{ color: "#5DBA76" }} paragraph>
-            Companies need to know what product to build, how to monetize them, and where to price them. Sample it tries to provide samples to everybody
+              Companies need to know what product to build, how to monetize
+              them, and where to price them. Sample it tries to provide samples
+              to everybody
             </Typography>
+          </Grid>
+        </Grid>
+      </div>
+      <Container maxWidth="md">
+        <Grid container spacing={isWidthUp("md", width) ? 10 : 5}>
+          <Grid item xs={12} md={6} lg={6}>
+            <Typography edge="start" variant="body1" color="inherit">
+              © 2021 SampleIT. All Rights Reserved.
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={6} lg={6}>
             <Box display="flex">
               {socialIcons.map((socialIcon, index) => (
                 <Box key={index} mr={index !== socialIcons.length - 1 ? 1 : 0}>
                   <IconButton
+                    size="xs"
                     aria-label={socialIcon.label}
                     className={classes.socialIcon}
-                    target='_blank'
+                    target="_blank"
                     href={socialIcon.href}
                   >
                     {socialIcon.icon}
@@ -245,7 +262,7 @@ function Footer(props) {
             </Box>
           </Grid>
         </Grid>
-      </div>
+      </Container>
     </footer>
   );
 }
@@ -253,7 +270,7 @@ function Footer(props) {
 Footer.propTypes = {
   theme: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired,
-  width: PropTypes.string.isRequired
+  width: PropTypes.string.isRequired,
 };
 
 export default withWidth()(withStyles(styles, { withTheme: true })(Footer));

@@ -62,7 +62,8 @@ const styles = (theme) => ({
   },
   wrapper: {
     position: "relative",
-    backgroundColor: "#FFC72C",
+    backgroundColor: "#FDBC00",
+    paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
   },
   image: {
@@ -101,11 +102,11 @@ function HowItWorks(props) {
       <div className={classes.wrapper}>
         <div className={classNames("container-fluid", classes.container)}>
           <div className={classNames(classes.containerFix, "container")}>
-            <Box mb={4}>
-              <Typography variant="h4" align="center">
-                How SAMPLE-IT Program works!
-              </Typography>
-            </Box>
+            <Typography>
+              <Box fontWeight={700} fontSize={30}  align="center">
+                How the SAMPLE-IT Program works!
+              </Box>
+            </Typography>
             <Grid item xs={12} md={12}>
               <Box
                 display="flex"
@@ -124,7 +125,7 @@ function HowItWorks(props) {
                       variant={isWidthUp("lg", width) ? "h6" : "body1"}
                       color="textSecondary"
                     >
-                      At SampleIT, we helps customer to achieve far better ROI
+                      At SampleIT, we help customers to achieve far better ROI
                       vs. traditional sampling.
                     </Typography>
                   </Box>
@@ -140,7 +141,7 @@ function HowItWorks(props) {
               >
                 <Box mb={4}>
                   <Typography variant={isWidthUp("lg", width) ? "h5" : "h6"}>
-                    2. CONSUMERS CONTACTS TO SAMPLE-IT.
+                    2. CONSUMERS CONTACT TO SAMPLE-IT.
                   </Typography>
                 </Box>
                 <div>
@@ -149,7 +150,7 @@ function HowItWorks(props) {
                       variant={isWidthUp("lg", width) ? "h6" : "body1"}
                       color="textSecondary"
                     >
-                      At SampleIT, we helps customer to achieve far better ROI
+                      At SampleIT, we helps customers to achieve far better ROI
                       vs. traditional sampling.
                     </Typography>
                   </Box>
@@ -165,7 +166,7 @@ function HowItWorks(props) {
               >
                 <Box mb={4}>
                   <Typography variant={isWidthUp("lg", width) ? "h5" : "h6"}>
-                    3. CONSUMERS SAMPLES TO SAMPLE-IT, AND CHOOSE TARGETING
+                    3. CONSUMERS SAMPLE TO SAMPLE-IT, AND CHOOSE TARGETING
                     CRITERIA.
                   </Typography>
                 </Box>
@@ -175,7 +176,7 @@ function HowItWorks(props) {
                       variant={isWidthUp("lg", width) ? "h6" : "body1"}
                       color="textSecondary"
                     >
-                      At SampleIT, we helps customer to achieve far better ROI
+                      At SampleIT, we helps customers to achieve far better ROI
                       vs. traditional sampling.
                     </Typography>
                   </Box>
@@ -191,7 +192,7 @@ function HowItWorks(props) {
               >
                 <Box mb={4}>
                   <Typography variant={isWidthUp("lg", width) ? "h5" : "h6"}>
-                    4. SAMPLES SENT DIRECT TO CLIENT.
+                    4. SAMPLES ARE SENT DIRECT TO CLIENT.
                   </Typography>
                 </Box>
                 <div>
@@ -200,7 +201,7 @@ function HowItWorks(props) {
                       variant={isWidthUp("lg", width) ? "h6" : "body1"}
                       color="textSecondary"
                     >
-                      At SampleIT, we helps customer to achieve far better ROI
+                      At SampleIT, we helps customers to achieve far better ROI
                       vs. traditional sampling.
                     </Typography>
                   </Box>
@@ -226,7 +227,7 @@ function HowItWorks(props) {
                       variant={isWidthUp("lg", width) ? "h6" : "body1"}
                       color="textSecondary"
                     >
-                      At SampleIT, we helps customer to achieve far better ROI
+                      At SampleIT, we helps customers to achieve far better ROI
                       vs. traditional sampling.
                     </Typography>
                   </Box>
